@@ -1,52 +1,39 @@
-// import Img2 from '../src/img/crop.jpg';
-// import Img3 from '../src/img/team-1.jpg';
-// import Img4 from '../src/img/team-3.jpg';
-import {Carousel } from 'react-bootstrap';
+// import React, { Component } from "react";
+// import Slider from "react-slick";
 
-const Slide = () => {
-    return (
-        <div>
-            <Carousel>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 img-height "
-                        src="https://i.postimg.cc/NfzMDVHP/willie-mosconi-slider.jpg"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a  aaa pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 img-height"
-                        src="https://i.postimg.cc/qBGQNc37/ro-slider.jpg"
-                        alt="Second slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100 img-height"
-                        src="https://i.postimg.cc/C12h7nZn/ms-1.jpg"
-                        alt="Third slide"
-                    />
-
-                    <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            </Carousel>
-        </div>
-    );
-};
-
-export default Slide;
+// export default class SimpleSlider extends Component {
+//     render() {
+//         const settings = {
+//             dots: true,
+//             infinite: true,
+//             speed: 500,
+//             slidesToShow: 1,
+//             slidesToScroll: 1
+//         };
+//         return (
+//             <div>
+//                 <h2> Single Item</h2>
+//                 <Slider {...settings}>
+//                     <div>
+//                         <h3>1</h3>
+//                     </div>
+//                     <div>
+//                         <h3>2</h3>
+//                     </div>
+//                     <div>
+//                         <h3>3</h3>
+//                     </div>
+//                     <div>
+//                         <h3>4</h3>
+//                     </div>
+//                     <div>
+//                         <h3>5</h3>
+//                     </div>
+//                     <div>
+//                         <h3>6</h3>
+//                     </div>
+//                 </Slider>
+//             </div>
+//         );
+//     }
+// }

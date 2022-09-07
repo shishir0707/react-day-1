@@ -1,52 +1,70 @@
 
-import { Container, Button, Form, Navbar, Nav, Row, Col, } from 'react-bootstrap';
-import Me from '../Img';
+import React from 'react';
+import { NavLink } from 'react-bootstrap';
+import './MainHeader.scss';
+import MyName from "../img/logo.png";
 
-const MainNav = () => {
+const MainNavBar = () => {
+    const [click, setClick] = React.useState(false);
+
+    const handleClick = () => setClick(!click);
+    const Close = () => setClick(false);
+
     return (
         <div>
-            <Navbar bg="primary" variant="dark" >
-                <Container>
-                    <Navbar.Brand href="#">Shishir</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbarScroll" />
-                    <Navbar.Collapse id="navbarScroll" className='justify-content-end'>
-                        <Nav
-                            className="my-2 my-lg-0"
-                            style={{ maxHeight: '100px' }}
-                            navbarScroll
-                        >
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">About</Nav.Link>
-                            <Nav.Link href="#action3">Testimonial</Nav.Link>
-                            <Nav.Link href="#action4" className='px-2'>Blog</Nav.Link>
-                            <Nav.Link href="#action5">Contact</Nav.Link>
-                        </Nav>
-                        <Form className="d-flex px-3">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button bg="dark" variant="dark">Search</Button>
-                        </Form>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar >
-            <div className='header-bottom mb-2 mt-2'>
-                <Row>
-                    <Col md={6} className='left-side d-flex align-items-center justify-content-center'>
-                        <h1 className='text-center'>I am Shariar Shishir</h1>
-                    </Col>
-                    <Col md={6} className="right-side">
-                        <Me/>
-                    </Col>
-                </Row>
-            </div>
-        </div >
+            <div className={click ? "main-container" : ""} onClick={() => Close()} />
+            <nav className="navbar fixed-top" onClick={e => e.stopPropagation()}>
+                <div className="container">
+                    <NavLink to="/" className="nav-logo">
 
+                    <img src={MyName} alt="img" />
 
+                    </NavLink>
+                    <ul className={click ? "nav-menu active" : "nav-menu"}>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Home
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/about"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                About
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/blog"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Blog
+                            </NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink
+                                to="/contact"
+                                className="nav-links"
+                                onClick={click ? handleClick : null}
+                            >
+                                Contact Us
+                            </NavLink>
+                        </li>
+                    </ul>
+                    <div className="nav-icon" onClick={handleClick}>
+                        <i className={click ? "fa fa-times" : "fa fa-bars"}></i>
+                    </div>
+                </div>
+            </nav>
+        </ div>
     );
-};
+}
 
-export default MainNav;
+export default MainNavBar;
