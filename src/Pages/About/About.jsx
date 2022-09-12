@@ -4,6 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 // import React, { useState, useEffect } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { name1 } from '../Blog/Blog';
 
 
 const About = () => {
@@ -73,7 +74,7 @@ const About = () => {
 
     return (
         <div className='container'>
-            <h1>This is About</h1>
+            <h1>This is About {name1}</h1>
             <div className='userInput pb-3' style={{ maxWidth: '300px' }}>
                 <label htmlFor="name" className='d-flex flex-column'>
                     Name:

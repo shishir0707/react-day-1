@@ -1,7 +1,11 @@
 // import { computeHeadingLevel } from '@testing-library/react';
 import React from 'react';
+import { sum } from '../Blog/Blog';
 
 const Home = () => {
+   console.log(sum(15, 7));
+
+
     const [count, setCount] = React.useState(0);
     // console.log(count);
 
