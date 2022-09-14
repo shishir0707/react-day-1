@@ -1,15 +1,18 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Carousel, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './MainNav.scss';
 import logo from '../../services/img/logo1.png'
+import HeaderBottom from '../carousel/Carousel';
 
 const MainNav = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logo} alt="" />
+                    <a href="/">
+                        <img src={logo} alt="" />
+                    </a>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
@@ -31,12 +34,12 @@ const MainNav = () => {
                             About
                         </NavLink>
                         <NavLink
-                            to="/test"
+                            to="/blog"
                             className={({ isActive }) =>
                                 isActive ? 'nav-active' : ''
                             }
                         >
-                            Test
+                            Blog
                         </NavLink>
                     </Nav>
                 </Navbar.Collapse>
